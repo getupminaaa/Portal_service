@@ -16,10 +16,9 @@ public class UserDaoTests {
         String password = "1234";
 
         UserDao userDao = new UserDao();
-        User user = userDao.findById(id);
+        User user = userDao.get(id);
         assertThat(user.getId(), is(id));
         assertThat(user.getName(), is(name));
         assertThat(user.getPassword(), is(password));
     }
-
 }

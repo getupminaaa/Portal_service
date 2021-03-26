@@ -3,7 +3,7 @@ package kr.ac.jejunu;
 import java.sql.*;
 
 public class UserDao {
-    public User findById(Integer id) throws ClassNotFoundException, SQLException {
+    public User get(Integer id) throws ClassNotFoundException, SQLException {
 
         Class.forName("com.mysql.cj.jdbc.Driver");
         Connection connection =
@@ -20,7 +20,7 @@ public class UserDao {
         ResultSet resultSet = preparedStatement.executeQuery();
         resultSet.next();
         //데이터를 오브젝트  매핑
-        User user = new User();기
+        User user = new User();
         user.setId(resultSet.getInt("id"));
         user.setName(resultSet.getString("name"));
         user.setPassword(resultSet.getString("password"));
