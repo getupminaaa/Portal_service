@@ -10,9 +10,9 @@ public class JejuConnectionMaker implements DataSource {
     public Connection getConnection() throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.cj.jdbc.Driver");
         return DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/portal?" +
+                "jdbc:mysql://localhost:3306/portalService?" +
                         "characterEncoding=utf-8&serverTimezone=UTC"
-                , "root", "7981"
+                , "root", "Rkdalsdk798!"
         );
     }
 }

@@ -3,6 +3,7 @@ package kr.ac.jejunu;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.SimpleDriverDataSource;
 
 import javax.sql.DataSource;
@@ -19,11 +20,16 @@ public class DaoFactory {
     @Value("${db.url}")
     private String url;
 
-
-    @Bean //Spring이 new를 해주는 녀석이야~ 라는 선언 -> instance를 Spring이 알아서 관리함
+    @Bean
     public UserDao userDao() throws ClassNotFoundException {
-        return new UserDao(dataSource());
+        return new UserDao(jdbcTemplate());
     }
+
+    @Bean
+    public JdbcTemplate jdbcTemplate() throws ClassNotFoundException {
+        return new JdbcTemplate(dataSource());
+    }
+
 
     @Bean
     public DataSource dataSource() throws ClassNotFoundException {
