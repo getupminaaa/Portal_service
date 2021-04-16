@@ -19,15 +19,15 @@ public class UserDaoTests {
 
     @BeforeAll
     public static void setup() throws ClassNotFoundException {
-        /*
         ApplicationContext applicationContext =
-                new AnnotationConfigApplicationContext(DaoFactory.class); //Bean을 관리하는 spring의 기본 오브젝트, 어노테이션으로 정의된 애들을 관리 -> daoFactory
+                new AnnotationConfigApplicationContext("kr.ac.jejunu"); //Bean을 관리하는 spring의 기본 오브젝트, 어노테이션으로 정의된 애들을 관리 -> daoFactory
         userDao = applicationContext.getBean("userDao", UserDao.class); //Bean은 고유한 이름이 있음, getBean.(메소드 명을 이름으로 채택, userDao라는 클래스 타입임을 정의함)
         // context -> strategy pattern 적용 ,dependency lookup
-        */
+/*
         ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("daoFactory.xml");
         userDao = applicationContext.getBean("userDao", UserDao.class);
 
+*/
 
     }
 
