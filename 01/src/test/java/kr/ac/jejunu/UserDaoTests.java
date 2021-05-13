@@ -50,9 +50,7 @@ public class UserDaoTests {
         String name = "허윤호";
         String password = "1111";
 
-        User user = new User();
-        user.setName(name);
-        user.setPassword(password);
+        User user = User.builder().name(name).password(password).build();
         userDao.insert(user); //요구사항을 다 담음
 
         User insertedUser = userDao.findById(user.getId());// 우리가 만든 것을 가지고 찾아오자 , id는 자동생성

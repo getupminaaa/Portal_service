@@ -1,3 +1,4 @@
+/*
 package kr.ac.jejunu;
 
 import java.sql.Connection;
@@ -20,3 +21,4 @@ public class FindByIdStatementStrategy implements StatementStrategy{
     }
 
 }
+*/
