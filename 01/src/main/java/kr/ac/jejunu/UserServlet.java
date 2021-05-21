@@ -1,3 +1,4 @@
+
 package kr.ac.jejunu;
 
 import org.springframework.context.ApplicationContext;
@@ -17,15 +18,18 @@ public class UserServlet extends GenericServlet {
     public void init(ServletConfig config) throws ServletException {
         ApplicationContext applicationContext =
                 new AnnotationConfigApplicationContext("kr.ac.jejunu");
-        userDao = applicationContext.getBean("userDao", UserDao.class);
+        this.userDao = applicationContext.getBean("userDao", UserDao.class);
+
         System.out.println("*************** init *****************");
+        super.init(config);
     }
 
     @Override
     public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
         System.out.println("*************** service *****************");
-        Integer id = Integer.parseInt(req.getParameter("id"));
-        User user = userDao.findById(id);
+//        Integer id = Integer.parseInt(req.getParameter("id"));
+
+        User user = userDao.findById(2);
         res.setContentType("text/html; charset=UTF-8");
         StringBuffer response = new StringBuffer();
         response.append("<html>");
@@ -37,4 +41,5 @@ public class UserServlet extends GenericServlet {
         response.append("</html>");
         res.getWriter().println(response.toString());
     }
+
 }

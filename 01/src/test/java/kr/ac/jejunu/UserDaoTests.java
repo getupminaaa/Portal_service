@@ -33,7 +33,7 @@ public class UserDaoTests {
 
 
     @Test
-    public void get() throws SQLException, ClassNotFoundException {
+    public void get() {
         Integer id = 1;
         String name = "hulk";
         String password = "1234";
@@ -46,7 +46,7 @@ public class UserDaoTests {
     }
 
     @Test
-    public void insert() throws SQLException, ClassNotFoundException {
+    public void insert() {
         String name = "허윤호";
         String password = "1111";
 
@@ -62,7 +62,7 @@ public class UserDaoTests {
     }
 
     @Test
-    public void update() throws SQLException, ClassNotFoundException {
+    public void update(){
         String name = "허윤호";
         String password = "1111";
 
@@ -84,7 +84,7 @@ public class UserDaoTests {
 
     }
     @Test
-    public void delete() throws SQLException, ClassNotFoundException {
+    public void delete() {
         String name = "허윤호";
         String password = "1111";
 
