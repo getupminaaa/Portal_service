@@ -9,4 +9,7 @@
 <h2>
     your password is ${user.password}!
 </h2>
+<h3>
+    user id is ${user.id}!
+</h3>
 </html>
